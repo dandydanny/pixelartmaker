@@ -21,6 +21,7 @@ var color;
 // Call makeGrid with dimension value, which populates DOM with DIV's
 // Use tables to make cells and rows: square pixels
 // Use jQuery to .toggleClass .on('click')
+// Color handling (MVP): add inline styles to elements in DOM
 // Color handling: a set of pre-defined color palettes that can be changed, or
 // dynamically push new color into array, and set class to point to location in array (which holds color value) 
 // bonus: ability to cycle the colors in array in a circular fashion
