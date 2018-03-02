@@ -16,7 +16,8 @@ function makeGrid(x,y) {
 	}
 }
 
-var color;
+var color = "purple";
+console.log('test color: ' + color);
 // After submit, prevent default, but grab dimension value
 // Call makeGrid with dimension value, which populates DOM with DIV's
 // Use tables to make cells and rows: square pixels
@@ -31,13 +32,19 @@ var color;
 
 $('#sizePicker').on('submit', function(){
 	var x, y;
-	color = $('#colorPicker').val();
+	// color = $('#colorPicker').val();
 	y = $('#inputHeight').val();
 	x = $('#inputWidth').val();
-	console.log('Clicked - vaues: ' + x + ', ' + y + ', ' + color);
+	console.log('Clicked - values: ' + x + ', ' + y);
 	makeGrid(x,y);
 	return false;	// preventDefault and stopPropagation
 })
+
+// $('#colorPicker1').on('change', function(){
+// 	color = $('#colorPicker1').val();
+// 	console.log('Color value: ' + color);
+// 	// return false;	// preventDefault and stopPropagation
+// })
 
 // This will only work on elements as loaded,
 // not on elements added to DOM afterwards
@@ -49,7 +56,13 @@ $('#sizePicker').on('submit', function(){
 // jQuery event delegation:
 // Tells jQuery to watch the table element for clicks,
 // and then if there are any, check if the click event's target is a pixel.
+
+
+
 $( 'table' ).on( 'click', '.pixel', function() {
-	console.log('pixel clicked');
-	$(this).toggleClass( "on" );
+	console.log('pixel clicked, color: ');
+	console.log(color);
+	// $(this).toggleClass( "on" );
+	$(this).css( "background-color", $('#colorPicker1').val() );
+
 });
