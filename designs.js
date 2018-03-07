@@ -17,7 +17,7 @@ function makeGrid(x,y) {
 }
 
 // Default color
-var color = "black";
+var color = "dimgray";
 console.log('test color: ' + color);
 // After submit, prevent default, but grab dimension value
 // Call makeGrid with dimension value, which populates DOM with DIV's
