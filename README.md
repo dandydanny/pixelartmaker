@@ -9,8 +9,6 @@ A browser-based pixel art maker. Think MacPaint and Microsoft Paint, but with wa
 
 To practice making things with newly learned JavaScript, jQuery, and DOM manipulation skills.
 
-## Original instructions
+## Demo
 
-To get started, open `designs.js` and start building out the app's functionality.
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+[Try this on Codepen](https://codepen.io/dandydanny/pen/GQabev)
