@@ -16,7 +16,8 @@ function makeGrid(x,y) {
 	}
 }
 
-var color = "purple";
+// Default color
+var color = "black";
 console.log('test color: ' + color);
 // After submit, prevent default, but grab dimension value
 // Call makeGrid with dimension value, which populates DOM with DIV's
@@ -57,12 +58,32 @@ $('#sizePicker').on('submit', function(){
 // Tells jQuery to watch the table element for clicks,
 // and then if there are any, check if the click event's target is a pixel.
 
+// Store color onto color palette
+$( '.palette' ).on( 'click', function() {
+	console.log("plalette clicked");
+	console.log("color from outside: " + color);
+	color = $(this).css( "background-color" );
+	console.log("new color: " + color);
+});
 
+$( '#colorPicker1' ).on( 'click', function() {
+	console.log("picker1 clicked");
+	$('#color1').css( "background-color", $('#colorPicker1').val() );
+});
 
+// TODO: consolidate and rid of duplication after getting this to work
+$( '#colorPicker2' ).on( 'click', function() {
+	console.log("picker2 clicked");
+	$('#color2').css( "background-color", $('#colorPicker2').val() );
+});
+
+// Draw pixel
 $( 'table' ).on( 'click', '.pixel', function() {
 	console.log('pixel clicked, color: ');
 	console.log(color);
 	// $(this).toggleClass( "on" );
-	$(this).css( "background-color", $('#colorPicker1').val() );
+	// $(this).css( "background-color", $('#colorPicker1').val() );
+	$(this).css( "background-color", color );
+
 
 });
