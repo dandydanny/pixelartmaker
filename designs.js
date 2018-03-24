@@ -77,13 +77,38 @@ $( '#colorPicker2' ).on( 'click', function() {
 	$('#color2').css( "background-color", $('#colorPicker2').val() );
 });
 
+// // Draw pixel
+// $( 'table' ).on( 'mousedown', '.pixel', function() {
+// 	console.log('pixel clicked, color: ');
+// 	console.log(color);
+// 	// $(this).toggleClass( "on" );
+// 	$(this).css( "background-color", $('#colorPicker1').val() );
+// 	// $(this).css( "background-color", color );
+// });
+
+
+
 // Draw pixel
-$( 'table' ).on( 'click', '.pixel', function() {
-	console.log('pixel clicked, color: ');
-	console.log(color);
-	// $(this).toggleClass( "on" );
-	// $(this).css( "background-color", $('#colorPicker1').val() );
-	$(this).css( "background-color", color );
+var penDrag = false;
 
-
+$( 'table' ).on("mousedown touchstart", "td", function() {
+	penDrag = true;
 });
+$( 'table' ).on("mouseup touchend touchcancel", "td", function() {
+	penDrag = false;
+});
+$( 'table' ).on("mousemove touchmove", "td", function() {
+	if (penDrag === true) {
+		$(this).css("background-color", $('#colorPicker1').val());
+	}
+});
+
+
+// $( 'table' ).on( mousedown, '.pixel', function() {
+// 	console.log('pixel clicked, color: ');
+// 	console.log(color);
+// 	// $(this).toggleClass( "on" );
+// 	// $(this).css( "background-color", $('#colorPicker1').val() );
+// 	$(this).css( "background-color", color );
+
+// })
